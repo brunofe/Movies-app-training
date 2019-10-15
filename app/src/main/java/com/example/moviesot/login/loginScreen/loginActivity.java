@@ -7,7 +7,7 @@ import android.os.Bundle;
 
 import com.example.moviesot.R;
 
-public class loginActivity extends Activity {
+public class loginActivity extends Activity implements loginContract.View {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

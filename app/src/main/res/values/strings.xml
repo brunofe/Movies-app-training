@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">MoviesOT</string>
+    <string name="startScreenTitle">INFORME SUA CONTA DE  E-MAIL</string>
+    <string name="bt_next">AVANÇAR</string>
+    <string name="email">E-mail</string>
+    <string name="inform_password">INFORME SUA SENHA</string>
+    <string name="password">Password</string>
+    <string name="text_login">ENTRAR</string>
+    <string name="example_email">example@gmail.com</string>
+    <string name="lost_password">Esqueceu sua senha?</string>
 </resources>
