@@ -1,7 +1,7 @@
 package com.example.moviesot.login.startScreen;
 
-public class startPresenter implements startContract.Presenter {
-    startContract.View mView;
+public class StartPresenter implements StartContract.Presenter {
+    private StartContract.View mView;
 
     @Override
     public void setUpView() {

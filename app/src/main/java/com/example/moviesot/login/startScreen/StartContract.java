@@ -1,6 +1,6 @@
 package com.example.moviesot.login.startScreen;
 
-public interface startContract {
+public interface StartContract {
     interface View {
         void setFonts();
     }

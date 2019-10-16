@@ -1,6 +1,6 @@
 package com.example.moviesot.login.loginScreen;
 
-public interface loginContract {
+public interface LoginContract {
     interface View {
 
     }

@@ -1,13 +1,11 @@
 package com.example.moviesot.login.loginScreen;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Activity;
 import android.os.Bundle;
 
 import com.example.moviesot.R;
 
-public class loginActivity extends Activity implements loginContract.View {
+public class LoginActivity extends Activity implements LoginContract.View {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
