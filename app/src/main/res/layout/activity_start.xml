@@ -4,14 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:background="@color/defaultBackground"
     tools:context=".login.startScreen.StartActivity">
+
+    <include layout="@layout/top_goback_bar"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_margin="40dp"
+        android:layout_marginBottom="30dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
         android:gravity="center"
         android:background="@color/defaultBackground"
         >
@@ -21,7 +26,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:gravity="center"
+            android:gravity="center|top"
             android:text="@string/startScreenTitle"
             android:textSize="@dimen/title"
             android:fontFamily="@font/dosis_bold" />
@@ -30,6 +35,7 @@
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:gravity="center"
+            android:focusableInTouchMode="true"
             android:layout_weight="1">
 
             <EditText
@@ -45,12 +51,13 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_weight="1"
             android:gravity="bottom">
 
             <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/behind_the_button"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:background="@drawable/shadow"
@@ -62,10 +69,10 @@
                 android:layout_height="50dp"
                 android:layout_marginTop="-60dp"
                 android:background="@drawable/rounded_button"
+                android:fontFamily="@font/dosis_bold"
                 android:stateListAnimator="@null"
                 android:text="@string/bt_next"
-                android:textColor="@color/white"
-                android:fontFamily="@font/dosis_bold"/>
+                android:textColor="@color/white" />
 
         </LinearLayout>
     </LinearLayout>

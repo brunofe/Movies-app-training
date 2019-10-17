@@ -4,24 +4,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:background="@color/defaultBackground"
     tools:context=".login.startScreen.StartActivity">
+
+    <include layout="@layout/top_goback_bar"/>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_margin="40dp"
+        android:layout_marginBottom="30dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
         android:gravity="center"
         android:background="@color/defaultBackground"
+
         >
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/tv_title_Login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:fontFamily="@font/dosis_bold"
-            android:gravity="center"
+            android:gravity="top"
             android:text="@string/inform_password"
             android:textSize="@dimen/title"
             android:textStyle="bold" />
@@ -30,11 +37,11 @@
             android:layout_height="100dp"
             android:orientation="vertical"
             android:gravity="center_vertical"
+            android:focusableInTouchMode="true"
             android:layout_weight="1">
 
-
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/tv_example_email"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/default_margin"
@@ -53,7 +60,7 @@
                 android:inputType="textPersonName" />
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/tv_lost_password"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="right"
@@ -64,20 +71,23 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/l_bt_login"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:orientation="vertical"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:gravity="bottom">
+            android:gravity="bottom"
+            android:orientation="vertical">
+
+
 
             <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/behind_the_button"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:background="@drawable/shadow"
-                />
+                android:background="@drawable/shadow" />
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/bt_login"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="-60dp"
