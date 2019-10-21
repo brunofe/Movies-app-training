@@ -4,8 +4,11 @@
     <string name="bt_next">AVANÇAR</string>
     <string name="email">E-mail</string>
     <string name="inform_password">INFORME SUA SENHA</string>
-    <string name="password">Password</string>
+    <string name="password">Senha</string>
     <string name="text_login">ENTRAR</string>
     <string name="example_email">example@gmail.com</string>
     <string name="lost_password">Esqueceu sua senha?</string>
+    <string name="create_new_account">CRIE SUA NOVA  CONTA</string>
+    <string name="complete_name">Nome completo</string>
+    <string name="user_name">Nome de usuário</string>
 </resources>

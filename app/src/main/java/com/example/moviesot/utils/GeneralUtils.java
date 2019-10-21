@@ -5,9 +5,12 @@ import android.content.res.Resources;
 import android.graphics.Typeface;
 
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.View;
+import android.view.ViewTreeObserver;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import androidx.appcompat.widget.AppCompatImageView;
@@ -45,6 +48,30 @@ public class GeneralUtils {
         return Math.round(px);
     }
 
+    public void addAutomaticScrollDownToScrollView(final LinearLayout rootView, final ScrollView sv){
+        sv.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+            @Override
+            public void onGlobalLayout() {
+                int heightDiff = rootView.getRootView().getHeight() - rootView.getHeight();
 
+                if (heightDiff > 100) {
+                    scrollDown(sv);
+                    Log.i("Keyboard", "keyboard aberto");
+                } else {
+                    Log.i("Keyboard", "keyboard fexado");
+                }
+            }
+        });
+    }
+
+    public void scrollDown(final ScrollView sv){
+        sv.post(new Runnable() {
+
+            @Override
+            public void run() {
+                sv.fullScroll(ScrollView.FOCUS_DOWN);
+            }
+        });
+    }
 
 }
