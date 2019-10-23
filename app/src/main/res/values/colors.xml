@@ -4,6 +4,7 @@
     <color name="defaultGreen">#129793</color>
     <color name="defaultOpaqueGreen">#66129793</color>
     <color name="white">#ffffff</color>
+    <color name="redAlertDefault">#fe3824</color>
 
     <color name="defaultGrey">#cfd0d1</color>
     <color name="greyDarker">#979899</color>

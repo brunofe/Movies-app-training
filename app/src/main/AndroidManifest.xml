@@ -9,13 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".register.tokenValidation.TokenValidationActivity"></activity>
-        <activity android:name=".register.newUser.NewUserActivity">
+        <activity android:name=".register.tokenValidation.TokenValidationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".register.newUser.NewUserActivity">
+
         </activity>
         <activity android:name=".login.loginScreen.LoginActivity"></activity>
         <activity android:name=".login.startScreen.StartActivity" />

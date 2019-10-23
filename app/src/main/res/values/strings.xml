@@ -11,4 +11,8 @@
     <string name="create_new_account">CRIE SUA NOVA  CONTA</string>
     <string name="complete_name">Nome completo</string>
     <string name="user_name">Nome de usuário</string>
+    <string name="email_token_message">PARA SUA SEGURANÇA, INFORME O CÓDIGO ENVIADO PARA O SEU E-MAIL:</string>
+    <string name="didnt_receive_the_code">Não recebeu o código? Enviar novamente</string>
+    <string name="send_again">Enviar novamente</string>
+    <string name="token">Código</string>
 </resources>

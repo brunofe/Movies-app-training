@@ -2,8 +2,15 @@ package com.example.moviesot.utils;
 
 import android.content.Context;
 import android.content.res.Resources;
+import android.graphics.Color;
+import android.graphics.ColorSpace;
 import android.graphics.Typeface;
 
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.SpannableStringBuilder;
+import android.text.style.ForegroundColorSpan;
+import android.text.style.StyleSpan;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
@@ -73,5 +80,22 @@ public class GeneralUtils {
             }
         });
     }
+
+    //seta bold em uma string e uma cor("valor hexadecimal") em uma palavra especifica no meio de um texto
+    public SpannableStringBuilder makeChangesInText(String text, String middleText, boolean bold, int color){
+        final SpannableStringBuilder sb = new SpannableStringBuilder(text);
+
+        StyleSpan boldSpan = new StyleSpan(Typeface.BOLD);
+        ForegroundColorSpan colorSpan = new ForegroundColorSpan(color);
+
+        Integer indexOf = text.indexOf(middleText);
+        Integer lastIndexOf = text.indexOf(middleText)+middleText.length();
+
+        sb.setSpan(colorSpan, indexOf, lastIndexOf, Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+        if(bold) sb.setSpan(boldSpan, indexOf, lastIndexOf, Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+
+        return sb;
+    }
+
 
 }
