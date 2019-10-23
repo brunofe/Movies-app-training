@@ -7,12 +7,11 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/defaultBackground"
-    tools:context=".register.tokenValidation.TokenValidationActivity">
+    tools:context=".register.pendingRegister.PendingRegisterActivity">
 
     <include layout="@layout/top_goback_bar"/>
 
     <ScrollView
-        android:id="@+id/sv_token_validation"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fillViewport="true">
@@ -29,17 +28,17 @@
             android:background="@color/defaultBackground">
 
             <TextView
-                android:id="@+id/tv_title_token_validation"
+                android:id="@+id/tv_title_pending_register"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/dosis_bold"
                 android:gravity="top|center_horizontal"
-                android:text="@string/email_token_message"
-                android:textSize="@dimen/sub_title"
+                android:text="@string/pending_register_message"
+                android:textSize="@dimen/small_title"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/tv_subTitle_token_validation"
+                android:id="@+id/tv_subTitle_pending_register"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -50,7 +49,7 @@
                 android:textStyle="bold"/>
 
             <EditText
-                android:id="@+id/et_token_validation"
+                android:id="@+id/et_pending_register"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:background="@drawable/border"
@@ -63,13 +62,14 @@
                 android:id="@+id/tv_didnt_receive_the_code"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/default_margin"
                 android:text="@string/didnt_receive_the_code"
                 android:textSize="15sp"
                 android:layout_marginTop="@dimen/default_margin"
                 android:textColorHighlight="@color/white"/>
 
             <LinearLayout
-                android:id="@+id/l_bt_token_validation"
+                android:id="@+id/l_bt_pending_register"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -83,7 +83,7 @@
                     android:background="@drawable/shadow" />
 
                 <Button
-                    android:id="@+id/bt_next_token_validation"
+                    android:id="@+id/bt_next_pending_register"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginTop="-60dp"

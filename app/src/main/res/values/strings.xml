@@ -15,4 +15,5 @@
     <string name="didnt_receive_the_code">Não recebeu o código? Enviar novamente</string>
     <string name="send_again">Enviar novamente</string>
     <string name="token">Código</string>
+    <string name="pending_register_message">IDENTIFICAMOS QUE VOCÊ JÁ INICIOU UM CADASTRO, PARA CONCLUIRMOS, INFORME O CÓDIGO ENVIADO PARA O  SEU E-MAIL:</string>
 </resources>
