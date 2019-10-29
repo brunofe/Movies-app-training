@@ -1,10 +1,6 @@
-package com.example.moviesot.register.tokenValidation;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
+package com.example.moviesot.register.tokenValidationScreen;
 
 import android.app.Activity;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.WindowManager;
 import android.widget.Button;

@@ -1,13 +1,8 @@
-package com.example.moviesot.register.newUser;
+package com.example.moviesot.register.newUserScreen;
 
 import android.app.Activity;
-import android.content.res.Configuration;
-import android.graphics.Rect;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.ViewTreeObserver;
 import android.view.WindowManager;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;

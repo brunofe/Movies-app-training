@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/defaultBackground"
-    tools:context=".register.pendingRegister.PendingRegisterActivity">
+    tools:context=".register.pendingRegisterScreen.PendingRegisterActivity">
 
     <include layout="@layout/top_goback_bar"/>
 

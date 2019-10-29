@@ -1,6 +1,4 @@
-package com.example.moviesot.register.pendingRegister;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.example.moviesot.register.pendingRegisterScreen;
 
 import android.app.Activity;
 import android.os.Bundle;

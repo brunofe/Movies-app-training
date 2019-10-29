@@ -1,4 +1,4 @@
-package com.example.moviesot.register.pendingRegister;
+package com.example.moviesot.register.pendingRegisterScreen;
 
 public class PendingRegisterPresenter implements PendingRegisterContract.Presenter {
 

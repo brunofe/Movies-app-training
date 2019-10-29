@@ -71,6 +71,7 @@ public class GeneralUtils {
         });
     }
 
+    //executa scrollDown em uma activity
     public void scrollDown(final ScrollView sv){
         sv.post(new Runnable() {
 
@@ -80,6 +81,25 @@ public class GeneralUtils {
             }
         });
     }
+
+    //retirar elementos da tela para reduzir espaço quando o teclado ta aberto quando
+    public void setGoneWhenKeyboardOpen(final LinearLayout rootView, final TextView tv){
+        tv.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+            @Override
+            public void onGlobalLayout() {
+                int heightDiff = rootView.getRootView().getHeight() - rootView.getHeight();
+
+                if (heightDiff > 100) {
+                    tv.setVisibility(View.GONE);
+                    Log.i("Keyboard", "keyboard aberto");
+                } else {
+                    tv.setVisibility(View.VISIBLE);
+                    Log.i("Keyboard", "keyboard fexado");
+                }
+            }
+        });
+    }
+
 
     //seta bold em uma string e uma cor("valor hexadecimal") em uma palavra especifica no meio de um texto
     public SpannableStringBuilder makeChangesInText(String text, String middleText, boolean bold, int color){

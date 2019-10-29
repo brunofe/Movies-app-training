@@ -16,4 +16,9 @@
     <string name="send_again">Enviar novamente</string>
     <string name="token">Código</string>
     <string name="pending_register_message">IDENTIFICAMOS QUE VOCÊ JÁ INICIOU UM CADASTRO, PARA CONCLUIRMOS, INFORME O CÓDIGO ENVIADO PARA O  SEU E-MAIL:</string>
+    <string name="confirmInformation">CONFIRME AS INFORMAÇÕES DE SUA CONTA</string>
+    <string name="create_new_password">CRIE SUA NOVA  SENHA</string>
+    <string name="validation_token">Token de validação</string>
+    <string name="newPassword">Nova Senha</string>
+    <string name="confirm_newPassword">Confirme sua senha</string>
 </resources>

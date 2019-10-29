@@ -1,4 +1,4 @@
-package com.example.moviesot.register.tokenValidation;
+package com.example.moviesot.register.tokenValidationScreen;
 
 public interface TokenValidationContract {
     interface View {

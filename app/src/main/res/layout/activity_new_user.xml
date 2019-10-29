@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/defaultBackground"
-    tools:context=".register.newUser.NewUserActivity">
+    tools:context=".register.newUserScreen.NewUserActivity">
 
     <include layout="@layout/top_goback_bar"/>
 

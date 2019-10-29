@@ -1,4 +1,4 @@
-package com.example.moviesot.register.newUser;
+package com.example.moviesot.register.newUserScreen;
 
 public class NewUserPresenter implements NewUserContract.Presenter{
 

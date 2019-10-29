@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/defaultBackground"
-    tools:context=".register.tokenValidation.TokenValidationActivity">
+    tools:context=".register.tokenValidationScreen.TokenValidationActivity">
 
     <include layout="@layout/top_goback_bar"/>
 

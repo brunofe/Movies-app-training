@@ -1,4 +1,4 @@
-package com.example.moviesot.register.tokenValidation;
+package com.example.moviesot.register.tokenValidationScreen;
 
 public class TokenValidationPresenter implements TokenValidationContract.Presenter{
     TokenValidationContract.View mView;
