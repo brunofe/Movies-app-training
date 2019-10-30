@@ -3,9 +3,9 @@ package com.example.moviesot.model;
 public class User {
     String email;
     String password;
-    String complete_name;
+    String completeName;
     String username;
-    String registration_status;
+    String registrationStatus;
 
     public String getEmail() {
         return email;
@@ -23,12 +23,12 @@ public class User {
         this.password = password;
     }
 
-    public String getComplete_name() {
-        return complete_name;
+    public String getCompleteName() {
+        return completeName;
     }
 
-    public void setComplete_name(String complete_name) {
-        this.complete_name = complete_name;
+    public void setCompleteName(String completeName) {
+        this.completeName = completeName;
     }
 
     public String getUsername() {
@@ -39,11 +39,11 @@ public class User {
         this.username = username;
     }
 
-    public String getRegistration_status() {
-        return registration_status;
+    public String getRegistrationStatus() {
+        return registrationStatus;
     }
 
-    public void setRegistration_status(String registration_status) {
-        this.registration_status = registration_status;
+    public void setRegistrationStatus(String registrationStatus) {
+        this.registrationStatus = registrationStatus;
     }
 }
