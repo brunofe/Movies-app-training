@@ -38,24 +38,6 @@ public class StartActivity extends Activity implements StartContract.View{
         context = this;
         mPresenter.setUpView();
 
-        testRetrofit();
-    }
-
-    /** metodo de teste retrofit **/
-    public void testRetrofit(){
-
-        bt_next.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String entrada;
-                entrada = et_start.getText().toString();
-
-                //recuperarCEPRetrofit(entrada);
-                UsersRepository repository = new UsersRepository();
-                repository.getUser(entrada, StartActivity.this);
-
-            }
-        });
     }
 
     /** metodo de teste apiFilmes **/
@@ -97,7 +79,26 @@ public class StartActivity extends Activity implements StartContract.View{
     }
 
     @Override
+    public void configureButton() {
+        bt_next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String userInput= et_start.getText().toString();
+
+                mPresenter.getUserInfo(userInput);
+            }
+        });
+    }
+
+    @Override
     public void configForSoftInputMode() {
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
     }
+
+    @Override
+    public void goToFirstScreenFlow(String flow, String email) {
+
+    }
+
+
 }
