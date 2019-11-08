@@ -49,6 +49,7 @@ public class ConfirmationDataActivity extends Activity implements ConfirmationDa
          * ***/
 
         getActionBar().setDisplayHomeAsUpEnabled(true);
+
         getActionBar().setTitle("");
     }
 

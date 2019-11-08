@@ -9,7 +9,7 @@
     android:background="@color/defaultBackground"
     tools:context=".register.newUserScreen.NewUserActivity">
 
-    <include layout="@layout/top_goback_bar"/>
+    <include layout="@layout/toolbar"/>
 
     <ScrollView
         android:id="@+id/sv_newUser"

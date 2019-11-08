@@ -9,7 +9,7 @@
     android:background="@color/defaultBackground"
     tools:context=".forgotPassword.confirmationDataScreen.ConfirmationDataActivity">
 
-    <include layout="@layout/top_goback_bar"/>
+    <include layout="@layout/toolbar"/>
 
     <ScrollView
         android:layout_width="match_parent"

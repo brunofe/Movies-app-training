@@ -10,5 +10,11 @@
         android:background="@color/defaultBackground"
         android:minHeight="?attr/actionBarSize" />
 
+    <com.miguelcatalan.materialsearchview.MaterialSearchView
+        android:id="@+id/search_view"
+        android:layout_width="match_parent"
+        android:visibility="visible"
+        android:layout_height="wrap_content" />
+
 
 </FrameLayout>
