@@ -1,14 +1,15 @@
 package com.example.moviesot.viewModel;
 
 import android.app.Application;
-import android.arch.lifecycle.AndroidViewModel;
-import android.arch.lifecycle.MutableLiveData;
-import android.support.annotation.NonNull;
 
-import com.example.android.appmovie.model.ListMovie;
-import com.example.android.appmovie.repository.HomeRepositoryImpl;
+import androidx.annotation.NonNull;
+import androidx.lifecycle.AndroidViewModel;
+import androidx.lifecycle.MutableLiveData;
 
-public class SearchFragmentViewModel extends AndroidViewModel  {
+import com.example.moviesot.model.ListMovie;
+import com.example.moviesot.repository.homeRepository.HomeRepositoryImpl;
+
+public class SearchFragmentViewModel extends AndroidViewModel {
 
     private HomeRepositoryImpl homeRepositoryImpl;
     private MutableLiveData<ListMovie> listMovie = new MutableLiveData<>();

@@ -1,17 +1,16 @@
 package com.example.moviesot.viewModel;
 
 import android.app.Application;
-import android.arch.lifecycle.AndroidViewModel;
-import android.arch.lifecycle.MutableLiveData;
-import android.arch.lifecycle.Observer;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.lifecycle.AndroidViewModel;
+import androidx.lifecycle.MutableLiveData;
+import androidx.lifecycle.Observer;
 
-import com.example.android.appmovie.model.ListMovie;
-import com.example.android.appmovie.model.MovieDetail;
-import com.example.android.appmovie.repository.HomeRepositoryImpl;
+import com.example.moviesot.model.ListMovie;
+import com.example.moviesot.model.MovieDetail;
+import com.example.moviesot.repository.homeRepository.HomeRepositoryImpl;
 
 public class MovieDetailViewModel extends AndroidViewModel {
 

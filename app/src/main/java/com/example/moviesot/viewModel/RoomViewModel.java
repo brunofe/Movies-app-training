@@ -1,11 +1,12 @@
 package com.example.moviesot.viewModel;
 
 import android.app.Application;
-import android.arch.lifecycle.AndroidViewModel;
-import android.arch.lifecycle.LiveData;
 
-import com.example.android.appmovie.model.Movie;
-import com.example.android.appmovie.repository.RoomRepository;
+import androidx.lifecycle.AndroidViewModel;
+import androidx.lifecycle.LiveData;
+
+import com.example.moviesot.model.Movie;
+import com.example.moviesot.repository.homeRepository.RoomRepository;
 
 import java.util.List;
 

@@ -12,18 +12,17 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.moviesot.R;
-import com.example.moviesot.model.ListMovie;
 import com.example.moviesot.model.Movie;
 import com.example.moviesot.utils.MovieManager;
 import com.squareup.picasso.Picasso;
 
+import java.util.List;
 
-public class ListMovieAdapter extends  RecyclerView.Adapter<RecyclerView.ViewHolder> {
-
-    private ListMovie movieList;
-    private MovieManager.OnOpenDetailMovie openDetailMovie;
-    private MovieManager.OnInsertFavorite insertFavorite;
+public class ListMovieHomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>  {
+    private List<Movie> movieList;
+    private MovieManager.OnDeleteMovie deleteMovie;
     private LayoutInflater inflater;
     private Context context;
     private boolean isLoadingAdded = false;
@@ -32,22 +31,19 @@ public class ListMovieAdapter extends  RecyclerView.Adapter<RecyclerView.ViewHol
     private final int ITEM = 0;
     private final int LOADING = 1;
 
-    public ListMovieAdapter(Context context) {
+    public ListMovieHomeAdapter(Context context) {
         inflater = LayoutInflater.from(context);
         this.context = context;
 
     }
 
-    public void setOpenDetailMovie(MovieManager.OnOpenDetailMovie openDetailMovie){
 
-        this.openDetailMovie = openDetailMovie;
+
+    public void setDeleteMovie(MovieManager.OnDeleteMovie onDeleteMovie){
+        this.deleteMovie = onDeleteMovie;
     }
 
-    public void setInsertFavorite(MovieManager.OnInsertFavorite onInsertFavorite){
-        this.insertFavorite = onInsertFavorite;
-    }
-
-    public void setMovieList(ListMovie listMovie){
+    public void setMovieList(List<Movie> listMovie){
 
         this.movieList = listMovie;
         notifyDataSetChanged();
@@ -63,11 +59,11 @@ public class ListMovieAdapter extends  RecyclerView.Adapter<RecyclerView.ViewHol
         switch (i) {
             case ITEM:
                 View viewItem = inflater.inflate(R.layout.movie_item_list, viewGroup, false);
-                viewHolder = new MovieViewHolder(viewItem,this);
+                viewHolder = new ListMovieHomeAdapter.MovieViewHomeHolder(viewItem,this);
                 break;
             case LOADING:
                 View viewLoading = inflater.inflate(R.layout.item_loading, viewGroup, false);
-                viewHolder = new LoadingViewHolder(viewLoading,this);
+                viewHolder = new ListMovieHomeAdapter.LoadingViewHomeHolder(viewLoading,this);
                 break;
 
         }
@@ -82,33 +78,26 @@ public class ListMovieAdapter extends  RecyclerView.Adapter<RecyclerView.ViewHol
 
 
             case ITEM:
+                final ListMovieHomeAdapter.MovieViewHomeHolder movieViewHolder = (ListMovieHomeAdapter.MovieViewHomeHolder) viewHolder;
 
-                final MovieViewHolder movieViewHolder = (MovieViewHolder) viewHolder;
+                url = String.format("http://image.tmdb.org/t/p/w185//%s", movieList.get(position).getPoster_path());
 
-                url = String.format("http://image.tmdb.org/t/p/w185//%s", movieList.getMovie().get(position).getPoster_path());
-
-                movieViewHolder.movieTitle.setText(movieList.getMovie().get(position).getTitle());
-                movieViewHolder.movieOverView.setText(movieList.getMovie().get(position).getOverview());
-                movieViewHolder.movieYear.setText(movieList.getMovie().get(position).getRelease_date());
-                movieViewHolder.movieVoteAverage.setText(movieList.getMovie().get(position).getVote_average());
+                movieViewHolder.movieTitle.setText(movieList.get(position).getTitle());
+                movieViewHolder.movieOverView.setText(movieList.get(position).getOverview());
+                movieViewHolder.movieYear.setText(movieList.get(position).getRelease_date());
+                movieViewHolder.movieVoteAverage.setText(movieList.get(position).getVote_average());
                 Picasso.get().load(url).into(movieViewHolder.imageMovie);
 //
 //                String genres = String.join(", ", movieList.getMovie().get(position).getGenreNames());
 //                movieViewHolder.movieGenres.setText(genres);
 
-                movieViewHolder.view.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        openDetailMovie.openMovieDetail(movieList.getMovie().get(position).getId());
-                    }
-                });
 
                 movieViewHolder.imageFavorite.setOnClickListener(new View.OnClickListener(){
 
                     @Override
                     public void onClick(View v) {
 
-                        insertFavorite.insertFavorite(movieList.getMovie().get(position));
+                        deleteMovie.deleteMovie(movieList.get(position).getId());
 
                     }
                 });
@@ -117,7 +106,7 @@ public class ListMovieAdapter extends  RecyclerView.Adapter<RecyclerView.ViewHol
                 break;
 
             case LOADING:
-                LoadingViewHolder loadingVH = (LoadingViewHolder) viewHolder;
+                ListMovieHomeAdapter.LoadingViewHomeHolder loadingVH = (ListMovieHomeAdapter.LoadingViewHomeHolder) viewHolder;
                 loadingVH.mProgressBar.setVisibility(View.VISIBLE);
                 break;
         }
@@ -131,20 +120,20 @@ public class ListMovieAdapter extends  RecyclerView.Adapter<RecyclerView.ViewHol
             return 0;
         }
 
-        return movieList.getMovie().size();
+        return movieList.size();
     }
 
 
-    class MovieViewHolder extends RecyclerView.ViewHolder {
+    class MovieViewHomeHolder extends RecyclerView.ViewHolder {
 
-        final ListMovieAdapter mAdapter;
+        final ListMovieHomeAdapter mAdapter;
         //       private final TextView movieTitle,movieYear,movieOverView,moviePrice,movieRunTime,movieGenres;
         private final ImageView imageMovie,imageFavorite;
         private final TextView movieTitle, movieYear,  movieVoteAverage, movieOverView;
         private final View view;
 
 
-        public MovieViewHolder(@NonNull View itemView, ListMovieAdapter adapter) {
+        public MovieViewHomeHolder(@NonNull View itemView, ListMovieHomeAdapter adapter) {
             super(itemView);
 
 
@@ -163,15 +152,15 @@ public class ListMovieAdapter extends  RecyclerView.Adapter<RecyclerView.ViewHol
     @Override
     public int getItemViewType(int position) {
 
-        return (position == movieList.getMovie().size() - 1 && isLoadingAdded) ? LOADING : ITEM;
+        return (position == movieList.size() - 1 && isLoadingAdded) ? LOADING : ITEM;
 
     }
 
-    protected class LoadingViewHolder extends RecyclerView.ViewHolder {
+    protected class LoadingViewHomeHolder extends RecyclerView.ViewHolder {
         private ProgressBar mProgressBar;
 
 
-        public LoadingViewHolder(View itemView,ListMovieAdapter adapter) {
+        public LoadingViewHomeHolder(View itemView,ListMovieHomeAdapter adapter) {
             super(itemView);
 
             mProgressBar = itemView.findViewById(R.id.progress_bar_loading);
@@ -188,29 +177,24 @@ public class ListMovieAdapter extends  RecyclerView.Adapter<RecyclerView.ViewHol
     public void removeLoadingFooter() {
         isLoadingAdded = false;
 
-        int position = movieList.getMovie().size() - 1;
+        int position = movieList.size() - 1;
         Movie movie = getItem(position);
 
         if (movie != null) {
-            movieList.getMovie().remove(position);
+            movieList.remove(position);
             notifyItemRemoved(position);
         }
     }
 
     public Movie getItem(int position) {
-        return movieList.getMovie().get(position);
+        return movieList.get(position);
     }
 
 
     public void add(Movie movie) {
-        movieList.getMovie().add(movie);
-        notifyItemInserted(movieList.getMovie().size() - 1);
+        movieList.add(movie);
+        notifyItemInserted(movieList.size() - 1);
     }
 
-    public void addAll(ListMovie listMovie) {
 
-        for (Movie movie : listMovie.getMovie()) {
-            add(movie);
-        }
-    }
 }

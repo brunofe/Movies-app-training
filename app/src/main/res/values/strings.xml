@@ -24,4 +24,8 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="action_accept">Aceitar</string>
+    <string name="action_dimiss">Cancelar</string>
+    <string name="label_alert_dialog">Este filme irá ser adicionado aos já vistos</string>
+    <string name="label_description_dialog">Insira uma nota para ele</string>
 </resources>

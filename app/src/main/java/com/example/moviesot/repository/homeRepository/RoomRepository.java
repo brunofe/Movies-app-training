@@ -1,12 +1,11 @@
 package com.example.moviesot.repository.homeRepository;
 
 import android.app.Application;
-import android.arch.lifecycle.LiveData;
 import android.os.AsyncTask;
-
-import com.example.android.appmovie.RoomDB.FavoriteMovieDataBase;
-import com.example.android.appmovie.RoomDB.MovieDAO;
-import com.example.android.appmovie.model.Movie;
+import androidx.lifecycle.LiveData;
+import com.example.moviesot.RoomDB.FavoriteMovieDataBase;
+import com.example.moviesot.RoomDB.MovieDAO;
+import com.example.moviesot.model.Movie;
 
 import java.util.List;
 
@@ -52,8 +51,6 @@ public class RoomRepository {
         @Override
         protected Void doInBackground(final Movie... params) {
             mAsyncTaskDao.insert(params[0]);
-
-
             return null;
         }
     }

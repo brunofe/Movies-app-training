@@ -7,18 +7,17 @@ import com.example.moviesot.utils.CallBack;
 public interface HomeRepository {
 
 
-    void getMovieList(String name, String page, MovieListaCallBack callBack);
-
-    interface MovieListaCallBack extends CallBack<ListMovie> {
+    interface MovieListaCallBack extends CallBack<ListMovie>{
 
     }
 
-    void getMovieDetail(String id, MovieDetailCallBack callBack);
+    void getMovieList(String name,String page, MovieListaCallBack callBack);
+
+    void getMovieListDetail(String id, MovieListaCallBack callBack);
 
     interface MovieDetailCallBack extends CallBack<MovieDetail>{
 
     }
-
-   void getMovieListDetail(String id, MovieListaCallBack callBack);
+    void getMovieDetail(String id, MovieDetailCallBack callBack);
 
 }

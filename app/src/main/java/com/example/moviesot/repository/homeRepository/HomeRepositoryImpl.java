@@ -1,18 +1,11 @@
 package com.example.moviesot.repository.homeRepository;
 
-import android.arch.lifecycle.LiveData;
-import android.arch.lifecycle.MutableLiveData;
 import android.util.Log;
-
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
-
-import com.example.android.appmovie.connect.RetrofitConfig;
-import com.example.android.appmovie.model.ListMovie;
-import com.example.android.appmovie.model.MovieDetail;
+import com.example.moviesot.conection.RetrofitConfig;
 import com.example.moviesot.model.ListMovie;
 import com.example.moviesot.model.MovieDetail;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;

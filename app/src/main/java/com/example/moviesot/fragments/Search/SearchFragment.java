@@ -1,4 +1,4 @@
-package com.example.moviesot.fragments;
+package com.example.moviesot.fragments.Search;
 
 
 import android.app.AlertDialog;
@@ -7,6 +7,10 @@ import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+
+import androidx.lifecycle.ViewModel;
+import androidx.lifecycle.ViewModelProviders;
+import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -22,14 +26,19 @@ import android.widget.TextView;
 
 import com.example.moviesot.R;
 import com.example.moviesot.adapter.ListMovieAdapter;
+import com.example.moviesot.home.movie_detail.MovieDetailActivity;
 import com.example.moviesot.model.ListMovie;
 import com.example.moviesot.model.Movie;
+import com.example.moviesot.utils.MovieManager;
+import com.example.moviesot.utils.PaginationScrollListener;
+import com.example.moviesot.viewModel.RoomViewModel;
+import com.example.moviesot.viewModel.SearchFragmentViewModel;
 
 import java.util.Timer;
 import java.util.TimerTask;
 
 
-public class SearchFragment extends Fragment {
+public class SearchFragment extends Fragment implements MovieManager.OnOpenDetailMovie, MovieManager.OnInsertFavorite, SearchContract.View{
 
 
     private SearchFragmentViewModel searchFragmentViewModel;
@@ -68,6 +77,7 @@ public class SearchFragment extends Fragment {
 
         searchFragmentViewModel = ViewModelProviders.of(this).get(SearchFragmentViewModel.class);
         roomViewModel = ViewModelProviders.of(this).get(RoomViewModel.class);
+
 
         mPresenter = new SearchPresenter(this);
 

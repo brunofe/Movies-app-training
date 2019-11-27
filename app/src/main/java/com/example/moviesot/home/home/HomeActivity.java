@@ -9,7 +9,7 @@ import android.view.MenuItem;
 
 import com.example.moviesot.R;
 import com.example.moviesot.fragments.HomeFragment;
-import com.example.moviesot.fragments.SearchFragment;
+import com.example.moviesot.fragments.Search.SearchFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class HomeActivity extends AppCompatActivity {
