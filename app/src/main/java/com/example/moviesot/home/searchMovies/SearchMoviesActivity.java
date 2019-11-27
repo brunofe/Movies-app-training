@@ -35,7 +35,7 @@ public class SearchMoviesActivity extends Activity implements SearchMoviesContra
         MaterialSearchView serchView = findViewById(R.id.search_view);
         serchView.setVisibility(View.VISIBLE);
         serchView.setHint("Buscar filmes...");
-        serchView.action
+        //serchView.action
 
 
         /*** Percisa setar no AndroidManifest.xml para quem essa tela vai voltar:
