@@ -32,7 +32,7 @@ public class MovieDetailActivity extends AppCompatActivity implements MovieManag
     private boolean isLoading = false;
     private ImageView bannerMovie, posterMovie;
     private MovieDetailViewModel movieDetailViewModel;
-    String text = "<font color=#FFFFFF><b>OT</b></font><font color=#FFFFFF>MOVIES</font>";
+    String text = "<font color=#FFFFFF>MOVIES</font><font color=#FFFFFF><b>OT</b></font>";
     private RecyclerView mRecyclerView;
     private ListMovieAdapterDetail mAdapter;
     private LinearLayoutManager linearLayoutManager;

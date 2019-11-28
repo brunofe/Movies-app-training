@@ -34,9 +34,8 @@ public class HomeFragment extends Fragment implements MovieManager.OnDeleteMovie
     String t;
     ImageButton navigationButton;
 
-
     TextView titleActionBar;
-    String text = "<font color=#FFFFFF><b>APP</b></font><font color=#FFFFFF>MOVIES</font>";
+    String text = "<font color=#FFFFFF>MOVIES</font><font color=#FFFFFF><b>OT</b></font>";
 
     private LinearLayoutCompat logoutButton;
     private TextView emailView;
