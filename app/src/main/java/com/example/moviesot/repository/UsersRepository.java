@@ -1,13 +1,9 @@
 package com.example.moviesot.repository;
 
-import android.content.Context;
-
 import com.example.moviesot.conection.RetrofitConection;
-import com.example.moviesot.login.startScreen.StartActivity;
 import com.example.moviesot.login.startScreen.StartPresenter;
 import com.example.moviesot.model.User;
 import com.example.moviesot.repository.api.UsersService;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;

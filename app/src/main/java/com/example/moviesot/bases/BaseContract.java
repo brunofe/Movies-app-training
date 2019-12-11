@@ -12,6 +12,5 @@ public interface BaseContract {
         Bundle getExtras();
 
         void setExtras(Bundle extras);
-
     }
 }

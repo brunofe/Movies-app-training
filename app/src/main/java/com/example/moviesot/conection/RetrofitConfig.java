@@ -2,7 +2,6 @@ package com.example.moviesot.conection;
 
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
-
 import okhttp3.HttpUrl;
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
@@ -32,7 +31,6 @@ public class  RetrofitConfig {
         OkHttpClient.Builder homeService = new OkHttpClient.Builder();
         Header getFirstHeader = null;
 
-
         client.addInterceptor(new Interceptor() {
             @Override
             public Response intercept(Chain chain) throws IOException {
@@ -49,21 +47,6 @@ public class  RetrofitConfig {
                 .readTimeout(30, TimeUnit.SECONDS);
         client.addInterceptor(logger);
 
-//        homeService.addInterceptor(new Interceptor() {
-//            @Override
-//            public Response intercept(Chain chain) throws IOException {
-//                Request request = chain.request();
-//                System.out.println("TOKEM AQUI");
-//                System.out.println(RetrofitConfig.tokenHeader);
-//                okhttp3.Headers headers = request.headers().newBuilder().add("Authorization", "Bearer " + RetrofitConfig.tokenHeader).build();
-//                request = request.newBuilder().headers(headers).build();
-//                HttpUrl url = request.url().newBuilder().addQueryParameter(NAME_SERVICE, VALUE_SERVICE).build();
-//                request = request.newBuilder().url(url).build();
-//                RetrofitConfig.tokenHeader = chain.proceed(request).header("x-access-token");
-//
-//                return chain.proceed(request);
-//            }
-//        });
         homeService.addInterceptor(logger);
 
         this.retrofit = new Retrofit.Builder()
@@ -71,23 +54,15 @@ public class  RetrofitConfig {
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(client.build())
                 .build();
-
-//        this.retrofitHome = new Retrofit.Builder()
-//                .baseUrl(URL_SERVICE)
-//                .addConverterFactory(GsonConverterFactory.create())
-//                .client(homeService.build())
-//                .build();
-
     }
 
     private static HttpLoggingInterceptor logger =
             new HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY);
 
 
-
     public MovieService getMovieService() {
-
         return this.retrofit.create(MovieService.class);
+
     }
 
 }

@@ -19,7 +19,6 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-
         Fragment fragment = new HomeFragment();
 
 //        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);

@@ -11,24 +11,20 @@ import java.util.List;
 
 public class RoomRepository {
 
-    private MovieDAO movieDAO;
-    private LiveData<List<Movie>> allMovie;
-
+   private MovieDAO movieDAO;
+   private LiveData<List<Movie>> allMovie;
 
    public RoomRepository(Application application){
         FavoriteMovieDataBase db = FavoriteMovieDataBase.getDatabase(application);
-
         movieDAO = db.movieDAO();
         allMovie = movieDAO.getAllCompromissos();
 
     }
 
     public LiveData<List<Movie>> getAllCompromissos() {
-
         System.out.println("PRINTAD GEALL REPOSRIOTY");
        return allMovie;
     }
-
 
     public void insert (Movie movie) {
 
@@ -41,9 +37,7 @@ public class RoomRepository {
     }
 
     private static class insertAsyncTask extends AsyncTask<Movie, Void, Void> {
-
         private MovieDAO mAsyncTaskDao;
-
         insertAsyncTask(MovieDAO dao) {
             mAsyncTaskDao = dao;
         }

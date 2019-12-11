@@ -48,20 +48,20 @@ public class HomeFragment extends Fragment implements MovieManager.OnDeleteMovie
     private ViewPager viewPager;
     private ImageButton favoriteButton;
 
-
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         View v = inflater.inflate(R.layout.fragment_home, container, false);
 
-
         roomViewModel = ViewModelProviders.of(this).get(RoomViewModel.class);
 
         Toolbar myToolbar = v.findViewById(R.id.my_toolbar);
         titleActionBar = (TextView) v.findViewById(R.id.titleActionBar);
+
+
         titleActionBar.setText(Html.fromHtml(text));
+
 
         mAdapter = new ListMovieHomeAdapter(v.getContext());
         mRecyclerView = v.findViewById(R.id.recyclerview_home);
@@ -83,11 +83,9 @@ public class HomeFragment extends Fragment implements MovieManager.OnDeleteMovie
         mAdapter.setDeleteMovie(this);
         mRecyclerView.setAdapter(mAdapter);
 
-
         return v;
 
     }
-
 
     @Override
     public void deleteMovie(String id) {

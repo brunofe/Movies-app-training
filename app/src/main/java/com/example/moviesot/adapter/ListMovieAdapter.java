@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.recyclerview.widget.RecyclerView;
@@ -17,7 +16,6 @@ import com.example.moviesot.model.ListMovie;
 import com.example.moviesot.model.Movie;
 import com.example.moviesot.utils.MovieManager;
 import com.squareup.picasso.Picasso;
-
 
 public class ListMovieAdapter extends  RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
@@ -48,7 +46,6 @@ public class ListMovieAdapter extends  RecyclerView.Adapter<RecyclerView.ViewHol
     }
 
     public void setMovieList(ListMovie listMovie){
-
         this.movieList = listMovie;
         notifyDataSetChanged();
 
@@ -76,10 +73,7 @@ public class ListMovieAdapter extends  RecyclerView.Adapter<RecyclerView.ViewHol
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, final int position) {
-
-
         switch (getItemViewType(position)) {
-
 
             case ITEM:
 
@@ -92,9 +86,6 @@ public class ListMovieAdapter extends  RecyclerView.Adapter<RecyclerView.ViewHol
                 movieViewHolder.movieYear.setText(movieList.getMovie().get(position).getRelease_date());
                 movieViewHolder.movieVoteAverage.setText(movieList.getMovie().get(position).getVote_average());
                 Picasso.get().load(url).into(movieViewHolder.imageMovie);
-//
-//                String genres = String.join(", ", movieList.getMovie().get(position).getGenreNames());
-//                movieViewHolder.movieGenres.setText(genres);
 
                 movieViewHolder.view.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -112,8 +103,6 @@ public class ListMovieAdapter extends  RecyclerView.Adapter<RecyclerView.ViewHol
 
                     }
                 });
-
-
                 break;
 
             case LOADING:
@@ -121,12 +110,10 @@ public class ListMovieAdapter extends  RecyclerView.Adapter<RecyclerView.ViewHol
                 loadingVH.mProgressBar.setVisibility(View.VISIBLE);
                 break;
         }
-
     }
 
     @Override
     public int getItemCount() {
-
         if(movieList==null){
             return 0;
         }
@@ -146,8 +133,6 @@ public class ListMovieAdapter extends  RecyclerView.Adapter<RecyclerView.ViewHol
 
         public MovieViewHolder(@NonNull View itemView, ListMovieAdapter adapter) {
             super(itemView);
-
-
             this.mAdapter = adapter;
             view = itemView;
             movieTitle = itemView.findViewById(R.id.movie_title);
@@ -162,18 +147,14 @@ public class ListMovieAdapter extends  RecyclerView.Adapter<RecyclerView.ViewHol
 
     @Override
     public int getItemViewType(int position) {
-
         return (position == movieList.getMovie().size() - 1 && isLoadingAdded) ? LOADING : ITEM;
 
     }
 
     protected class LoadingViewHolder extends RecyclerView.ViewHolder {
         private ProgressBar mProgressBar;
-
-
         public LoadingViewHolder(View itemView,ListMovieAdapter adapter) {
             super(itemView);
-
             mProgressBar = itemView.findViewById(R.id.progress_bar_loading);
 
         }
@@ -200,7 +181,6 @@ public class ListMovieAdapter extends  RecyclerView.Adapter<RecyclerView.ViewHol
     public Movie getItem(int position) {
         return movieList.getMovie().get(position);
     }
-
 
     public void add(Movie movie) {
         movieList.getMovie().add(movie);

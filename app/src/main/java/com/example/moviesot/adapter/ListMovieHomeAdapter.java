@@ -8,11 +8,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.moviesot.R;
 import com.example.moviesot.model.Movie;
 import com.example.moviesot.utils.MovieManager;
@@ -34,17 +32,14 @@ public class ListMovieHomeAdapter extends RecyclerView.Adapter<RecyclerView.View
     public ListMovieHomeAdapter(Context context) {
         inflater = LayoutInflater.from(context);
         this.context = context;
-
     }
-
-
 
     public void setDeleteMovie(MovieManager.OnDeleteMovie onDeleteMovie){
         this.deleteMovie = onDeleteMovie;
+
     }
 
     public void setMovieList(List<Movie> listMovie){
-
         this.movieList = listMovie;
         notifyDataSetChanged();
 
@@ -73,9 +68,7 @@ public class ListMovieHomeAdapter extends RecyclerView.Adapter<RecyclerView.View
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, final int position) {
 
-
         switch (getItemViewType(position)) {
-
 
             case ITEM:
                 final ListMovieHomeAdapter.MovieViewHomeHolder movieViewHolder = (ListMovieHomeAdapter.MovieViewHomeHolder) viewHolder;
@@ -87,21 +80,14 @@ public class ListMovieHomeAdapter extends RecyclerView.Adapter<RecyclerView.View
                 movieViewHolder.movieYear.setText(movieList.get(position).getRelease_date());
                 movieViewHolder.movieVoteAverage.setText(movieList.get(position).getVote_average());
                 Picasso.get().load(url).into(movieViewHolder.imageMovie);
-//
-//                String genres = String.join(", ", movieList.getMovie().get(position).getGenreNames());
-//                movieViewHolder.movieGenres.setText(genres);
-
 
                 movieViewHolder.imageFavorite.setOnClickListener(new View.OnClickListener(){
 
                     @Override
                     public void onClick(View v) {
-
                         deleteMovie.deleteMovie(movieList.get(position).getId());
-
                     }
                 });
-
 
                 break;
 
@@ -115,19 +101,14 @@ public class ListMovieHomeAdapter extends RecyclerView.Adapter<RecyclerView.View
 
     @Override
     public int getItemCount() {
-
         if(movieList==null){
             return 0;
         }
-
         return movieList.size();
     }
 
-
     class MovieViewHomeHolder extends RecyclerView.ViewHolder {
-
         final ListMovieHomeAdapter mAdapter;
-        //       private final TextView movieTitle,movieYear,movieOverView,moviePrice,movieRunTime,movieGenres;
         private final ImageView imageMovie,imageFavorite;
         private final TextView movieTitle, movieYear,  movieVoteAverage, movieOverView;
         private final View view;
@@ -135,7 +116,6 @@ public class ListMovieHomeAdapter extends RecyclerView.Adapter<RecyclerView.View
 
         public MovieViewHomeHolder(@NonNull View itemView, ListMovieHomeAdapter adapter) {
             super(itemView);
-
 
             this.mAdapter = adapter;
             view = itemView;
@@ -151,7 +131,6 @@ public class ListMovieHomeAdapter extends RecyclerView.Adapter<RecyclerView.View
 
     @Override
     public int getItemViewType(int position) {
-
         return (position == movieList.size() - 1 && isLoadingAdded) ? LOADING : ITEM;
 
     }
@@ -159,14 +138,11 @@ public class ListMovieHomeAdapter extends RecyclerView.Adapter<RecyclerView.View
     protected class LoadingViewHomeHolder extends RecyclerView.ViewHolder {
         private ProgressBar mProgressBar;
 
-
         public LoadingViewHomeHolder(View itemView,ListMovieHomeAdapter adapter) {
             super(itemView);
-
             mProgressBar = itemView.findViewById(R.id.progress_bar_loading);
 
         }
-
     }
 
     public void addLoadingFooter() {
@@ -195,6 +171,5 @@ public class ListMovieHomeAdapter extends RecyclerView.Adapter<RecyclerView.View
         movieList.add(movie);
         notifyItemInserted(movieList.size() - 1);
     }
-
 
 }

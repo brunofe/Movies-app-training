@@ -11,17 +11,20 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@id/navigation"
-        android:layout_alignParentTop="true"
-        >
+        android:layout_alignParentTop="true">
 
     </FrameLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/navigation"
         android:layout_width="match_parent"
-        android:layout_height="56dp"
+        android:layout_height="wrap_content"
+        android:layout_alignWithParentIfMissing="true"
+        android:layout_gravity="bottom"
+        app:labelVisibilityMode="unlabeled"
         android:theme="@style/HomeBar"
         android:layout_alignParentBottom="true"
+        app:itemHorizontalTranslationEnabled="true"
         app:itemIconTint="@color/white"
         app:menu="@menu/bottom_navigation"/>
 

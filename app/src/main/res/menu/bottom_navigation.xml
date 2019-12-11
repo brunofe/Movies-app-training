@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
 
     <item
         android:id="@+id/icon_home"
@@ -7,13 +9,17 @@
         android:title=""
         />
 
+    <item
+        android:id="@+id/icon_favorite"
+        android:iconTint="@color/white"
+        android:icon="@drawable/ic_action_heart"
+        android:title="" />
 
     <item
         android:id="@+id/icon_search"
         android:iconTint="@color/white"
         android:icon="@drawable/ic_search"
         android:title="" />
-
 
 
 </menu>

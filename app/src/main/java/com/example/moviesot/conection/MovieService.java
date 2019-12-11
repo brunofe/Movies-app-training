@@ -10,8 +10,6 @@ import retrofit2.http.Query;
 
 public interface MovieService {
 
-
-
     @GET("search/movie")
     Call<ListMovie> getListMovie(@Query("query") String name, @Query("page") String page);
 

@@ -6,12 +6,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
-
-
 import com.example.moviesot.R;
 import com.example.moviesot.model.ListMovie;
 import com.example.moviesot.model.Movie;
@@ -24,14 +21,12 @@ public class ListMovieAdapterDetail extends  RecyclerView.Adapter<RecyclerView.V
     private final int ITEMDETAIL = 0;
     private final int ITEM = 1;
     private final int LOADING = 2;
-
     private ListMovie movieList;
     private MovieDetail movieDetail;
     private MovieManager.OnOpenDetailMovie openDetailMovie;
     private LayoutInflater inflater;
     private Context context;
     private boolean isLoadingAdded = false;
-
 
     public ListMovieAdapterDetail(Context context) {
         inflater = LayoutInflater.from(context);
@@ -50,7 +45,6 @@ public class ListMovieAdapterDetail extends  RecyclerView.Adapter<RecyclerView.V
         RecyclerView.ViewHolder viewHolder = null;
 
         switch (i) {
-
             case ITEMDETAIL:
                 View viewItemDetail = inflater.inflate(R.layout.item_movie_detail, viewGroup, false);
                 viewHolder = new ItemDetailViewHolderDetail(viewItemDetail, this);
@@ -66,13 +60,8 @@ public class ListMovieAdapterDetail extends  RecyclerView.Adapter<RecyclerView.V
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, final int position) {
-
         switch (getItemViewType(position)) {
-
             case ITEMDETAIL:
-
-                System.out.println("PRINTANDO BANNER MVOIE");
-                System.out.println(movieDetail.getBannerId());
                 final ItemDetailViewHolderDetail itemDetailViewHolderDetail = (ItemDetailViewHolderDetail) viewHolder;
                 String urlPoster = String.format("http://image.tmdb.org/t/p/w185//%s", movieDetail.getPosterId());
                 String urldetail = String.format("http://image.tmdb.org/t/p/w185//%s", movieDetail.getBannerId());
@@ -91,10 +80,6 @@ public class ListMovieAdapterDetail extends  RecyclerView.Adapter<RecyclerView.V
                 movieViewHolder.movieTitle.setText(movieList.getMovie().get(position).getTitle());
                 movieViewHolder.movieYear.setText(movieList.getMovie().get(position).getRelease_date());
                 Picasso.get().load(url).into(movieViewHolder.imageMovie);
-//
-//                String genres = String.join(", ", movieList.getMovie().get(position).getGenreNames());
-//                movieViewHolder.movieGenres.setText(genres);
-
                 movieViewHolder.view.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -103,14 +88,13 @@ public class ListMovieAdapterDetail extends  RecyclerView.Adapter<RecyclerView.V
                 });
 
                 break;
-
         }
     }
 
     public void setMovieList(ListMovie listMovie) {
-
         this.movieList = listMovie;
         notifyDataSetChanged();
+
     }
 
     public void setMovieDetail(MovieDetail movieDetail){
@@ -124,7 +108,6 @@ public class ListMovieAdapterDetail extends  RecyclerView.Adapter<RecyclerView.V
         if (movieList == null) {
             return 0;
         }
-
         return movieList.getMovie().size() ;
     }
 
@@ -138,11 +121,9 @@ public class ListMovieAdapterDetail extends  RecyclerView.Adapter<RecyclerView.V
     class MovieViewHolderDetail extends RecyclerView.ViewHolder {
 
         final ListMovieAdapterDetail mAdapter;
-        //       private final TextView movieTitle,movieYear,movieOverView,moviePrice,movieRunTime,movieGenres;
         private final ImageView imageMovie;
         private final TextView movieTitle, movieYear;
         private final View view;
-
 
         public MovieViewHolderDetail(@NonNull View itemView, ListMovieAdapterDetail adapter) {
             super(itemView);
@@ -153,7 +134,6 @@ public class ListMovieAdapterDetail extends  RecyclerView.Adapter<RecyclerView.V
             movieYear = itemView.findViewById(R.id.year_movie);
             imageMovie = itemView.findViewById(R.id.imagemMovie);
 
-
         }
     }
 
@@ -162,7 +142,6 @@ public class ListMovieAdapterDetail extends  RecyclerView.Adapter<RecyclerView.V
         private ImageView bannerMovieDetail, posterMovieDetail;
         private CardView cardViewDetail;
         private TextView descriptionDetail, titleMovieDetail, genresMovieDetail, avarageMovieDetail,yearMovieDetail,durationMovieDetail;
-
 
         public ItemDetailViewHolderDetail(View itemView, ListMovieAdapterDetail adapter) {
             super(itemView);
@@ -176,10 +155,7 @@ public class ListMovieAdapterDetail extends  RecyclerView.Adapter<RecyclerView.V
             durationMovieDetail = itemView.findViewById(R.id.duration_detail);
 
         }
-
     }
-
-
 
     public Movie getItem(int position) {
         return movieList.getMovie().get(position);

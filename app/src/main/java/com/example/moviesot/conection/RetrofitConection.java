@@ -12,8 +12,6 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 
 public class RetrofitConection{
-
-
     public UsersService createUserService(){
         OkHttpClient.Builder okhttpBuilder = new OkHttpClient.Builder();
         okhttpBuilder.addInterceptor(new Interceptor() {
@@ -27,7 +25,6 @@ public class RetrofitConection{
                 return chain.proceed(newRequest.build());
             }
         });
-
 
         /** criação do objeto retrofit **/
         String urlBase="https://ole.dev.gateway.zup.me/client-training/v1/users/";

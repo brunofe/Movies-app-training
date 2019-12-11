@@ -15,7 +15,6 @@ public class ListMovie {
     }
 
     public void setMovie(List<Movie> search){
-
         this.results = search;
 
     }

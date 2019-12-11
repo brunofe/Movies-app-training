@@ -26,8 +26,6 @@ public class RoomViewModel extends AndroidViewModel {
 
     public LiveData<List<Movie>> getAllMovie() { return allMovie; }
 
-
-
     public void insert(Movie movie) { repository.insert(movie); }
     public void delete(String idMovie) {repository.deleteMovie(idMovie);}
 }

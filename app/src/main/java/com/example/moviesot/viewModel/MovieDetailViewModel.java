@@ -25,14 +25,6 @@ public class MovieDetailViewModel extends AndroidViewModel {
 
     public void init(String id) {
 
-//        homeRepositoryImpl.getMovieDetail(id).observeForever(new Observer<MovieDetail>() {
-//            @Override
-//            public void onChanged(@Nullable MovieDetail movieDetail) {
-//                getMovieDetail().setValue(movieDetail);
-//
-//
-//            }
-//        });
     }
 
     public void initMovieList(String id) {

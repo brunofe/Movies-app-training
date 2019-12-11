@@ -12,8 +12,6 @@ import retrofit2.Response;
 
 public class HomeRepositoryImpl implements HomeRepository {
 
-
-
     @Override
     public void getMovieList(String name, String page, final MovieListaCallBack callBack) {
 
@@ -72,9 +70,7 @@ public class HomeRepositoryImpl implements HomeRepository {
         });
     }
 
-
     public LiveData<ListMovie> getMovieListDetail(String id) {
-
 
         Call<ListMovie> call = new RetrofitConfig().getMovieService().getListMovieDetail(id);
         final MutableLiveData<ListMovie> data = new MutableLiveData<>();
@@ -94,30 +90,5 @@ public class HomeRepositoryImpl implements HomeRepository {
 
         return data;
     }
-
-//    public LiveData<MovieDetail> getMovieDetail(String id){
-//        Call<MovieDetail> call = new RetrofitConfig().getMovieService().getDetailMovie(id);
-//        final MutableLiveData<MovieDetail> data = new MutableLiveData<>();
-//        System.out.println("ENTROI GETMOVIE DETAAAAIL");
-//        call.enqueue(new Callback<MovieDetail>() {
-//            @Override
-//            public void onResponse(Call<MovieDetail> call, Response<MovieDetail> response) {
-//                MovieDetail movieDetail = response.body();
-//                System.out.println("PRINTANDO NO REPOSITARIOOOOOO");
-//                System.out.println(movieDetail.getTitle());
-//                data.setValue(response.body());
-//            }
-//
-//            @Override
-//            public void onFailure(Call<MovieDetail> call, Throwable t) {
-//                Log.e("EMAILService   ", "Erro ao buscar o email:" + t.getMessage());
-//                System.out.println("NAO DEU CERTOOOO");
-//            }
-//        });
-//
-//        return data;
-//    }
-
-
 
 }

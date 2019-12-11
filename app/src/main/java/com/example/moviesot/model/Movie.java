@@ -62,8 +62,6 @@ public class Movie {
         this.id = id;
     }
 
-
-
     public void setPosterId(String posterId) {
         this.poster_path = posterId;
     }
@@ -75,8 +73,6 @@ public class Movie {
     public void setBannerId(String bannerId) {
         this.bannerId = bannerId;
     }
-
-
 
     public void setVoteAverage(String voteAverage) {
         this.vote_average = voteAverage;
@@ -145,7 +141,5 @@ public class Movie {
     public void setAcquired(Boolean acquired) {
         this.acquired = acquired;
     }
-
-
 
 }
